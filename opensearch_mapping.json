@@ -213,6 +213,50 @@
                 "type": "keyword",
                 "ignore_above": 256,
                 "normalizer": "lowercase_normalizer"
+              },
+              "crypto": {
+                "type": "keyword",
+                "ignore_above": 256,
+                "normalizer": "lowercase_normalizer"
+              },
+              "iban": {
+                "type": "keyword",
+                "ignore_above": 256,
+                "normalizer": "lowercase_normalizer"
+              },
+              "credit_card": {
+                "type": "keyword",
+                "ignore_above": 256,
+                "normalizer": "lowercase_normalizer"
+              },
+              "us_ssn": {
+                "type": "keyword",
+                "ignore_above": 256,
+                "normalizer": "lowercase_normalizer"
+              },
+              "us_driver_license": {
+                "type": "keyword",
+                "ignore_above": 256,
+                "normalizer": "lowercase_normalizer"
+              },
+              "us_passport": {
+                "type": "keyword",
+                "ignore_above": 256,
+                "normalizer": "lowercase_normalizer"
+              },
+              "medical_license": {
+                "type": "keyword",
+                "ignore_above": 256,
+                "normalizer": "lowercase_normalizer"
+              }
+            }
+          },
+          "rag:fulltext": {
+            "type": "text",
+            "fields": {
+              "shingles": {
+                "type": "text",
+                "analyzer": "shingle_2_3"
               }
             }
           },
@@ -1463,19 +1507,47 @@
         "default": {
           "tokenizer": "standard",
           "filter": ["lowercase", "asciifolding", "edge_ngram_filter"]
+        },
+        "shingle_2_3": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            "en_possessive",
+            "en_stop",
+            "shingle_2_3_filter"
+          ]
         }
       },
       "filter": {
         "edge_ngram_filter": {
           "type": "edge_ngram",
           "min_gram": 2,
-          "max_gram": 10
+          "max_gram": 10,
+          "filler_token": ""
+        },
+        "en_possessive": {
+          "type": "stemmer",
+          "language": "possessive_english"
+        },
+        "en_stop": {
+          "type": "stop",
+          "stopwords": "_english_"
+        },
+        "shingle_2_3_filter": {
+          "type": "shingle",
+          "min_shingle_size": 2,
+          "max_shingle_size": 3,
+          "output_unigrams": false
         }
       }
     },
     "index": {
       "replication": {
         "type": "DOCUMENT"
+      },
+      "highlight": {
+          "max_analyzed_offset": "1000000"
       },
       "number_of_shards": "1",
       "provided_name": "os_ontology_v1",
