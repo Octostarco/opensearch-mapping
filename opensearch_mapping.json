@@ -3,6 +3,82 @@
   "mappings": {
     "dynamic": "false",
     "properties": {
+      "processing_status": {
+        "dynamic": "false",
+        "properties": {
+          "executor": {
+            "type": "keyword",
+            "ignore_above": 256,
+            "normalizer": "lowercase_normalizer"
+          },
+          "type": {
+            "type": "keyword",
+            "ignore_above": 256,
+            "normalizer": "lowercase_normalizer"
+          },
+          "name": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256,
+                "normalizer": "lowercase_normalizer"
+              }
+            }
+          },
+          "description": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256,
+                "normalizer": "lowercase_normalizer"
+              }
+            }
+          },
+          "created_by": {
+            "type": "keyword",
+            "ignore_above": 256
+          },
+          "os_workspace": {
+            "type": "keyword",
+            "ignore_above": 256
+          },
+          "status": {
+            "type": "keyword",
+            "ignore_above": 256
+          },
+          "progress": {
+            "type": "float"
+          },
+          "message": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256,
+                "normalizer": "lowercase_normalizer"
+              }
+            }
+          },
+          "metadata": {
+            "type": "object"
+          },
+          "created_at": {
+            "type": "date"
+          },
+          "last_updated_at": {
+            "type": "date"
+          },
+          "canceled_at": {
+            "type": "date"
+          },
+          "canceled_by": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
       "annotations": {
         "dynamic": "false",
         "properties": {
@@ -275,13 +351,11 @@
                   },
                   "os_workspace": {
                     "type": "keyword",
-                    "ignore_above": 256,
-                    "normalizer": "lowercase_normalizer"
+                    "ignore_above": 256
                   },
                   "os_relationship_workspace": {
                     "type": "keyword",
-                    "ignore_above": 256,
-                    "normalizer": "lowercase_normalizer"
+                    "ignore_above": 256
                   },
                   "text": {
                     "type": "text",
@@ -966,8 +1040,7 @@
             "fields": {
               "keyword": {
                 "type": "keyword",
-                "ignore_above": 256,
-                "normalizer": "lowercase_normalizer"
+                "ignore_above": 256
               }
             }
           },
@@ -982,8 +1055,7 @@
             "fields": {
               "keyword": {
                 "type": "keyword",
-                "ignore_above": 256,
-                "normalizer": "lowercase_normalizer"
+                "ignore_above": 256
               }
             }
           },
@@ -992,8 +1064,7 @@
             "fields": {
               "keyword": {
                 "type": "keyword",
-                "ignore_above": 256,
-                "normalizer": "lowercase_normalizer"
+                "ignore_above": 256
               }
             }
           },
@@ -1002,8 +1073,7 @@
             "fields": {
               "keyword": {
                 "type": "keyword",
-                "ignore_above": 256,
-                "normalizer": "lowercase_normalizer"
+                "ignore_above": 256
               }
             }
           },
@@ -1012,8 +1082,7 @@
             "fields": {
               "keyword": {
                 "type": "keyword",
-                "ignore_above": 256,
-                "normalizer": "lowercase_normalizer"
+                "ignore_above": 256
               }
             }
           },
@@ -1022,8 +1091,7 @@
             "fields": {
               "keyword": {
                 "type": "keyword",
-                "ignore_above": 256,
-                "normalizer": "lowercase_normalizer"
+                "ignore_above": 256
               }
             }
           },
@@ -1032,8 +1100,7 @@
             "fields": {
               "keyword": {
                 "type": "keyword",
-                "ignore_above": 256,
-                "normalizer": "lowercase_normalizer"
+                "ignore_above": 256
               }
             }
           },
@@ -1048,8 +1115,7 @@
             "fields": {
               "keyword": {
                 "type": "keyword",
-                "ignore_above": 256,
-                "normalizer": "lowercase_normalizer"
+                "ignore_above": 256
               }
             }
           },
@@ -1098,8 +1164,7 @@
             "fields": {
               "keyword": {
                 "type": "keyword",
-                "ignore_above": 256,
-                "normalizer": "lowercase_normalizer"
+                "ignore_above": 256
               }
             }
           },
@@ -1111,8 +1176,7 @@
             "fields": {
               "keyword": {
                 "type": "keyword",
-                "ignore_above": 256,
-                "normalizer": "lowercase_normalizer"
+                "ignore_above": 256
               }
             }
           },
@@ -1121,8 +1185,7 @@
             "fields": {
               "keyword": {
                 "type": "keyword",
-                "ignore_above": 256,
-                "normalizer": "lowercase_normalizer"
+                "ignore_above": 256
               }
             }
           },
@@ -1131,8 +1194,7 @@
             "fields": {
               "keyword": {
                 "type": "keyword",
-                "ignore_above": 256,
-                "normalizer": "lowercase_normalizer"
+                "ignore_above": 256
               }
             }
           },
@@ -1144,22 +1206,11 @@
             "fields": {
               "keyword": {
                 "type": "keyword",
-                "ignore_above": 256,
-                "normalizer": "lowercase_normalizer"
+                "ignore_above": 256
               }
             }
           },
           "os_role": {
-            "type": "text",
-            "fields": {
-              "keyword": {
-                "type": "keyword",
-                "ignore_above": 256,
-                "normalizer": "lowercase_normalizer"
-              }
-            }
-          },
-          "os_textsearchfield": {
             "type": "text",
             "fields": {
               "keyword": {
@@ -1174,8 +1225,7 @@
             "fields": {
               "keyword": {
                 "type": "keyword",
-                "ignore_above": 256,
-                "normalizer": "lowercase_normalizer"
+                "ignore_above": 256
               }
             }
           },
@@ -1184,8 +1234,7 @@
             "fields": {
               "keyword": {
                 "type": "keyword",
-                "ignore_above": 256,
-                "normalizer": "lowercase_normalizer"
+                "ignore_above": 256
               }
             }
           },
@@ -1320,8 +1369,7 @@
             "fields": {
               "keyword": {
                 "type": "keyword",
-                "ignore_above": 256,
-                "normalizer": "lowercase_normalizer"
+                "ignore_above": 256
               }
             }
           },
@@ -1456,13 +1504,11 @@
               },
               "os_entity_uid_from": {
                 "type": "keyword",
-                "ignore_above": 256,
-                "normalizer": "lowercase_normalizer"
+                "ignore_above": 256
               },
               "os_entity_uid_to": {
                 "type": "keyword",
-                "ignore_above": 256,
-                "normalizer": "lowercase_normalizer"
+                "ignore_above": 256
               }
             }
           },
@@ -1470,13 +1516,11 @@
             "properties": {
               "os_entity_uid": {
                 "type": "keyword",
-                "ignore_above": 256,
-                "normalizer": "lowercase_normalizer"
+                "ignore_above": 256
               },
               "entity_type": {
                 "type": "keyword",
-                "ignore_above": 256,
-                "normalizer": "lowercase_normalizer"
+                "ignore_above": 256
               },
               "entity_label": {
                 "type": "text",
