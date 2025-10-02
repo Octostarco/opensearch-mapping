@@ -2739,60 +2739,6 @@
     }
   },
   "settings": {
-    "analysis": {
-      "normalizer": {
-        "lowercase_normalizer": {
-          "type": "custom",
-          "char_filter": [],
-          "filter": [
-            "lowercase",
-            "asciifolding"
-          ]
-        }
-      },
-      "analyzer": {
-        "default": {
-          "tokenizer": "standard",
-          "filter": [
-            "lowercase",
-            "asciifolding",
-            "edge_ngram_filter"
-          ]
-        },
-        "shingle_2_3": {
-          "type": "custom",
-          "tokenizer": "standard",
-          "filter": [
-            "lowercase",
-            "en_possessive",
-            "en_stop",
-            "shingle_2_3_filter"
-          ]
-        }
-      },
-      "filter": {
-        "edge_ngram_filter": {
-          "type": "edge_ngram",
-          "min_gram": 2,
-          "max_gram": 10,
-          "filler_token": ""
-        },
-        "en_possessive": {
-          "type": "stemmer",
-          "language": "possessive_english"
-        },
-        "en_stop": {
-          "type": "stop",
-          "stopwords": "_english_"
-        },
-        "shingle_2_3_filter": {
-          "type": "shingle",
-          "min_shingle_size": 2,
-          "max_shingle_size": 3,
-          "output_unigrams": false
-        }
-      }
-    },
     "index": {
       "replication": {
         "type": "DOCUMENT"
@@ -2804,10 +2750,65 @@
       "provided_name": "os_ontology_v1",
       "max_result_window": "1000000",
       "knn": "true",
-      "creation_date": "1732176802112",
-      "uuid": "8qHlOyKqR02vpCMbrIt9SA",
+      "creation_date": "1757182021299",
+      "analysis": {
+        "normalizer": {
+          "lowercase_normalizer": {
+            "type": "custom",
+            "char_filter": [],
+            "filter": [
+              "lowercase",
+              "asciifolding"
+            ]
+          }
+        },
+        "analyzer": {
+          "default": {
+            "tokenizer": "standard",
+            "filter": [
+              "lowercase",
+              "asciifolding",
+              "edge_ngram_filter"
+            ]
+          },
+          "shingle_2_3": {
+            "type": "custom",
+            "tokenizer": "standard",
+            "filter": [
+              "lowercase",
+              "en_possessive",
+              "en_stop",
+              "shingle_2_3_filter"
+            ]
+          }
+        },
+        "filter": {
+          "edge_ngram_filter": {
+            "type": "edge_ngram",
+            "min_gram": 2,
+            "max_gram": 10,
+            "filler_token": ""
+          },
+          "en_possessive": {
+            "type": "stemmer",
+            "language": "possessive_english"
+          },
+          "en_stop": {
+            "type": "stop",
+            "stopwords": "_english_"
+          },
+          "shingle_2_3_filter": {
+            "type": "shingle",
+            "min_shingle_size": 2,
+            "max_shingle_size": 3,
+            "output_unigrams": false
+          }
+        }
+      },
+      "number_of_replicas": "1",
+      "uuid": "21nNJLcOTsKKNbyXHgcDPA",
       "version": {
-        "created": "136377827"
+        "created": "136397827"
       }
     }
   }
