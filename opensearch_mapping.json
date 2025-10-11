@@ -6,17 +6,7 @@
       "processing_status": {
         "dynamic": "false",
         "properties": {
-          "entity_id": {
-            "type": "keyword",
-            "ignore_above": 256,
-            "normalizer": "lowercase_normalizer"
-          },
           "status_code": {
-            "type": "keyword",
-            "ignore_above": 256,
-            "normalizer": "lowercase_normalizer"
-          },
-          "entity_type": {
             "type": "keyword",
             "ignore_above": 256,
             "normalizer": "lowercase_normalizer"
