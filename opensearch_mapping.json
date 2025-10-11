@@ -1,3 +1,4 @@
+PUT /os_ontology_v1
 {
   "aliases": {},
   "mappings": {
@@ -2697,10 +2698,8 @@
         "max_analyzed_offset": "1000000"
       },
       "number_of_shards": "1",
-      "provided_name": "os_ontology_v1",
       "max_result_window": "1000000",
       "knn": "true",
-      "creation_date": "1757182021299",
       "analysis": {
         "normalizer": {
           "lowercase_normalizer": {
@@ -2748,11 +2747,7 @@
           }
         }
       },
-      "number_of_replicas": "1",
-      "uuid": "21nNJLcOTsKKNbyXHgcDPA",
-      "version": {
-        "created": "136397827"
-      }
+      "number_of_replicas": "1"
     }
   }
 }
