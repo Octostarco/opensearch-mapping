@@ -6,17 +6,12 @@
       "processing_status": {
         "dynamic": "false",
         "properties": {
-          "executor": {
+          "status_code": {
             "type": "keyword",
             "ignore_above": 256,
             "normalizer": "lowercase_normalizer"
           },
-          "type": {
-            "type": "keyword",
-            "ignore_above": 256,
-            "normalizer": "lowercase_normalizer"
-          },
-          "name": {
+          "reason": {
             "type": "text",
             "fields": {
               "keyword": {
@@ -26,56 +21,11 @@
               }
             }
           },
-          "description": {
-            "type": "text",
-            "fields": {
-              "keyword": {
-                "type": "keyword",
-                "ignore_above": 256,
-                "normalizer": "lowercase_normalizer"
-              }
-            }
+          "timeout": {
+            "type": "integer"
           },
-          "created_by": {
-            "type": "keyword",
-            "ignore_above": 256
-          },
-          "os_workspace": {
-            "type": "keyword",
-            "ignore_above": 256
-          },
-          "status": {
-            "type": "keyword",
-            "ignore_above": 256
-          },
-          "progress": {
-            "type": "float"
-          },
-          "message": {
-            "type": "text",
-            "fields": {
-              "keyword": {
-                "type": "keyword",
-                "ignore_above": 256,
-                "normalizer": "lowercase_normalizer"
-              }
-            }
-          },
-          "metadata": {
-            "type": "object"
-          },
-          "created_at": {
+          "timestamp": {
             "type": "date"
-          },
-          "last_updated_at": {
-            "type": "date"
-          },
-          "canceled_at": {
-            "type": "date"
-          },
-          "canceled_by": {
-            "type": "keyword",
-            "ignore_above": 256
           }
         }
       },
@@ -2756,20 +2706,13 @@
           "lowercase_normalizer": {
             "type": "custom",
             "char_filter": [],
-            "filter": [
-              "lowercase",
-              "asciifolding"
-            ]
+            "filter": ["lowercase", "asciifolding"]
           }
         },
         "analyzer": {
           "default": {
             "tokenizer": "standard",
-            "filter": [
-              "lowercase",
-              "asciifolding",
-              "edge_ngram_filter"
-            ]
+            "filter": ["lowercase", "asciifolding", "edge_ngram_filter"]
           },
           "shingle_2_3": {
             "type": "custom",
