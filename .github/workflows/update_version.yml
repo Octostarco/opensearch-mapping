@@ -1,0 +1,38 @@
+name: Update OpenSearch Mapping Version
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update mappings._meta.version with current timestamp and commit
+        run: |
+          TIMESTAMP=$(date +%s)
+          echo "Updating mappings._meta.version to $TIMESTAMP"
+          jq ".mappings._meta.version = \"$TIMESTAMP\"" opensearch_mapping.json > tmp.json && mv tmp.json opensearch_mapping.json
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if git diff --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git add opensearch_mapping.json
+          git commit -m "[skip ci] automatic update of OpenSearch mapping version to $TIMESTAMP"
+          git push origin main

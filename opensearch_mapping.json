@@ -1,6 +1,9 @@
 {
   "aliases": {},
   "mappings": {
+    "_meta": {
+      "version": "1760525245"
+    },
     "dynamic": "false",
     "properties": {
       "processing_status": {
