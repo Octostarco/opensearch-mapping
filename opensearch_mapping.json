@@ -2,7 +2,7 @@
   "aliases": {},
   "mappings": {
     "_meta": {
-      "version": "1760525245"
+      "version": "1760525448"
     },
     "dynamic": "false",
     "properties": {
@@ -2709,13 +2709,20 @@
           "lowercase_normalizer": {
             "type": "custom",
             "char_filter": [],
-            "filter": ["lowercase", "asciifolding"]
+            "filter": [
+              "lowercase",
+              "asciifolding"
+            ]
           }
         },
         "analyzer": {
           "default": {
             "tokenizer": "standard",
-            "filter": ["lowercase", "asciifolding", "edge_ngram_filter"]
+            "filter": [
+              "lowercase",
+              "asciifolding",
+              "edge_ngram_filter"
+            ]
           },
           "shingle_2_3": {
             "type": "custom",
