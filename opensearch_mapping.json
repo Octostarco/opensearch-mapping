@@ -106,7 +106,7 @@
               },
               "embedding": {
                 "properties": {
-                  "vector_keras_facenet_512_20180402_114759": {
+                  "vector_insightface_buffalo_l_512_1": {
                     "properties": {
                       "value": {
                         "type": "knn_vector",
