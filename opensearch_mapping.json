@@ -106,7 +106,7 @@
               },
               "embedding": {
                 "properties": {
-                  "vector_insightface_buffalo_l_512_1": {
+                  "vector_facenet_pytorch_inception_resnet_v1_512_vggface2": {
                     "properties": {
                       "value": {
                         "type": "knn_vector",
