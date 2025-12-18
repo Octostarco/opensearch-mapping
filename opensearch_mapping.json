@@ -29,6 +29,9 @@
           },
           "timestamp": {
             "type": "date"
+          },
+          "do_not_reindex_at": {
+            "type": "date"
           }
         }
       },
